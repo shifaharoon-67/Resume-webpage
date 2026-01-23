@@ -2,42 +2,47 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #e9c6f5, #c9a4e3);
+    background: linear-gradient(135deg, #fceabb, #f8b500);
 }
 
 .container {
     display: flex;
     max-width: 1200px;
-    margin: 40px auto;
-    background: #f9efff;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
 }
 
 /* LEFT PANEL */
 .left-panel {
-    width: 35%;
-    background: linear-gradient(180deg, #b07adf, #e4b7f5);
+    width: 40%;
+    background: linear-gradient(180deg, #ff5f6d, #ffc371);
     padding: 30px;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    display: block;
-    margin: auto;
     border: 4px solid #fff;
+    object-fit: cover;
+    margin-bottom: 15px;
 }
 
 .left-panel h1 {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 10px;
+    font-size: 26px;
 }
 
 .degree {
@@ -47,68 +52,95 @@ body {
 }
 
 .card {
-    background: rgba(255,255,255,0.25);
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 12px;
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
 }
 
 .card h3 {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    color: #fff;
 }
 
-.card a {
-    display: block;
+.card p, .card a {
     color: #fff;
     text-decoration: none;
-    margin: 6px 0;
+    font-size: 14px;
+}
+
+.card a:hover {
+    color: #ffd700;
 }
 
 /* RIGHT PANEL */
 .right-panel {
-    width: 65%;
-    padding: 30px;
+    width: 60%;
+    padding: 40px 30px;
+    background: linear-gradient(180deg, #1f4037, #99f2c8);
+    color: #fff;
 }
 
 .right-panel h2 {
-    color: #6a2da8;
+    color: #fff;
+    font-size: 28px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 /* ACCORDION */
 .accordion-item {
-    background: #fff;
-    margin-bottom: 12px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 15px;
     border-radius: 12px;
     overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.accordion-item:hover {
+    transform: translateY(-3px);
 }
 
 .accordion-header {
     width: 100%;
-    background: #d9b3f0;
+    background: rgba(0,0,0,0.2);
     border: none;
     padding: 15px;
     font-size: 16px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    color: #fff;
+    font-weight: 500;
 }
 
 .accordion-body {
     display: none;
     padding: 15px;
+    background: rgba(255,255,255,0.05);
 }
 
 .accordion-body ul {
     padding-left: 20px;
 }
 
+.accordion-body li {
+    margin-bottom: 8px;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
-    background: #b07adf;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: #fff;
+    margin-top: 20px;
 }
 
 footer img {
@@ -121,4 +153,20 @@ footer a {
     color: #fff;
     text-decoration: none;
     margin: 5px 0;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffd700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+    }
 }
